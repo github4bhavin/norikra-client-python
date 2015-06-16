@@ -13,8 +13,7 @@ RPC_DEFAULT_PORT = 26571
 class Client(object):
 
     def __init__(self, host="localhost", port=RPC_DEFAULT_PORT, opts={}):
-        # compatiblity for python < 3.1
-        addr = "http://{h}:{p}/".format(h=host, p=port)
+        addr = "http://{0}:{1}/".format(host,port)
         self.addr = addr
         self.client = MsgPackClientOverHttp(addr)
 
